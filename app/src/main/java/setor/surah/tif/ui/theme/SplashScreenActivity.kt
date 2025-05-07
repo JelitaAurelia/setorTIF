@@ -24,6 +24,7 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import setor.surah.tif.MainActivity
 import setor.surah.tif.R
 
@@ -43,6 +44,8 @@ class SplashScreenActivity : ComponentActivity() {
     @Composable
     fun SplashScreen(onGoogleSignInClick: () -> Unit) {
         var scale by remember { mutableStateOf(0f) }
+        var username by remember { mutableStateOf("") }
+        var password by remember { mutableStateOf("") }
 
         LaunchedEffect(Unit) {
             scale = 1f
@@ -57,26 +60,18 @@ class SplashScreenActivity : ComponentActivity() {
                     )
                 )
         ) {
+
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(16.dp),
-                verticalArrangement = Arrangement.Center,
+                    .padding(horizontal = 16.dp, vertical = 32.dp),
+                verticalArrangement = Arrangement.Top,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Image(
-                    painter = painterResource(id = R.drawable.splash1),
-                    contentDescription = "App Logo",
-                    modifier = Modifier
-                        .size(251.dp)
-                        .scale(scale)
-                        .animateContentSize()
-                )
-
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(32.dp))
 
                 Text(
-                    text = "Qur'an Al Latheef",
+                    text = "Smart Memorize",
                     color = Color.White,
                     style = MaterialTheme.typography.headlineMedium.copy(
                         fontSize = 24.sp,
@@ -92,6 +87,42 @@ class SplashScreenActivity : ComponentActivity() {
                     style = MaterialTheme.typography.bodyMedium.copy(
                         fontSize = 22.sp
                     )
+                )
+
+                Spacer(modifier = Modifier.height(16.dp))
+
+                Image(
+                    painter = painterResource(id = R.drawable.splash1),
+                    contentDescription = "App Logo",
+                    modifier = Modifier
+                        .size(251.dp)
+                        .scale(scale)
+                        .animateContentSize()
+                )
+
+                Spacer(modifier = Modifier.height(24.dp))
+
+                OutlinedTextField(
+                    value = username,
+                    onValueChange = { username = it },
+                    label = { Text("Username") },
+                    singleLine = true,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp)
+                )
+
+                Spacer(modifier = Modifier.height(8.dp))
+
+                OutlinedTextField(
+                    value = password,
+                    onValueChange = { password = it },
+                    label = { Text("Password") },
+                    singleLine = true,
+                    visualTransformation = PasswordVisualTransformation(),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp)
                 )
 
                 Spacer(modifier = Modifier.height(24.dp))
@@ -129,7 +160,7 @@ class SplashScreenActivity : ComponentActivity() {
                         )
                         Spacer(modifier = Modifier.width(8.dp))
                         Text(
-                            text = "Log in with Google",
+                            text = "Log in as Dosen",
                             color = Color.White,
                             style = MaterialTheme.typography.labelLarge.copy(
                                 fontSize = 16.sp
@@ -149,4 +180,3 @@ class SplashScreenActivity : ComponentActivity() {
         }
     }
 }
-
