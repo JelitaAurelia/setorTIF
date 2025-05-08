@@ -1,5 +1,6 @@
-package setor.surah.tif.ui.theme
+package setor.surah.tif.ui
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -29,6 +30,7 @@ import setor.surah.tif.MainActivity
 import setor.surah.tif.R
 
 class SplashScreenActivity : ComponentActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

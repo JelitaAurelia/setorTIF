@@ -1,4 +1,4 @@
-package setor.surah.tif.ui.theme
+package setor.surah.tif.theme
 
 import androidx.compose.ui.graphics.Color
 

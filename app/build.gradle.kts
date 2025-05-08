@@ -41,6 +41,22 @@ android {
 
 dependencies {
 
+    implementation(platform("androidx.compose:compose-bom:2024.06.00"))
+// Retrofit untuk API
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
+
+// Navigation untuk Compose
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+
+// Coroutines untuk operasi asinkronus
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+
+// Lifecycle dan ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

@@ -13,7 +13,7 @@
         android:theme="@style/Theme.SetorTIF"
         tools:targetApi="31">
         <activity
-            android:name="setor.surah.tif.ui.theme.SplashScreenActivity"
+            android:name="setor.surah.tif.ui.SplashScreenActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.SetorTIF">
